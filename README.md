@@ -1,3 +1,1 @@
-What the game is about:
-
-It is a Top down 2D game 
+- A topdown 2D Action game with weapons and abilities
