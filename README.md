@@ -1,1 +1,3 @@
-- A topdown 2D Action game with weapons and abilities
+- A topdown 2D Action game 
+- Survive a wave of enemies with high action combat
+- use weapons and abilities to maneuver around and use weapons to deal high damage
