@@ -25,7 +25,7 @@ public class BasicEnemy : EnemyBehaviour
         Debug.Log("Basic Enemy Down!!");
         
     }
-    public override void TakeDamage(int amount)
+    public override void TakeDamage(float amount)
     {
         base.TakeDamage(amount);
         

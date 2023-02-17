@@ -21,13 +21,23 @@ public class EnemyController : MonoBehaviour
 
     }
 
+    
+
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.tag == "PlayerHurtbox") 
         {
             Debug.Log("HurtboxColliding");
+            
+
             basicEnemy.TakeDamage(5);
             basicEnemy.Knockback(0.5f,0.5f);
+
+            if (basicEnemy.curHealth < 0) 
+            {
+                basicEnemy.curHealth = 0;
+                Destroy(this.gameObject);
+            }
 
 
             
