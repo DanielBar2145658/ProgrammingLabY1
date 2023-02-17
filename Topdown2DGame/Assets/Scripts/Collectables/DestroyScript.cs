@@ -5,9 +5,21 @@ using UnityEngine;
 public class DestroyScript : MonoBehaviour
 {
     /*
-    private void OnTriggerEnter2D(Collider2D collision)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(collision.gameObject);
+        if (collision.gameObject.tag == "Player") 
+        {
+            Destroy(gameObject);
+        }
+        
     }
     */
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.tag == "Player")
+        {
+            Destroy(gameObject);
+        }
+    }
 }

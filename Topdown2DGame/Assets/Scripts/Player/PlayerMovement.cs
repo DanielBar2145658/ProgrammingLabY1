@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public float speed;
 
+    public PlayerStats stats;
     public Rigidbody2D rb2D;
     [SerializeField]
     Vector2 move;
@@ -13,7 +13,7 @@ public class PlayerMovement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -32,13 +32,19 @@ public class PlayerMovement : MonoBehaviour
     {
         move.x = UnityEngine.Input.GetAxisRaw("Horizontal");
         move.y = UnityEngine.Input.GetAxisRaw("Vertical");
+
+        if (UnityEngine.Input.GetKeyDown(KeyCode.F)) 
+        {
+            stats.SpeedBuff(4);
+        }
+        
         
     
     }
     void Movement() 
     {
-
-        rb2D.MovePosition(rb2D.position + move * speed * Time.fixedDeltaTime);
+        var speedcalc = stats.baseSpeed;
+        rb2D.MovePosition(rb2D.position + move * speedcalc * Time.fixedDeltaTime);
 
     }
 
