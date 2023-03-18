@@ -822,6 +822,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats: {fileID: 862484453}
   rb2D: {fileID: 862484452}
+  shootPoint: {fileID: 104349084}
+  bullet: {fileID: 424634693207038076, guid: bb1d8ea270b20c446b8faf664e388cfa, type: 3}
   move: {x: 0, y: 0}
 --- !u!50 &862484452
 Rigidbody2D:
