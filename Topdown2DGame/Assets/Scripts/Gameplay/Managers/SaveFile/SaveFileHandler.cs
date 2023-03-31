@@ -9,7 +9,7 @@ public class SaveFileHandler
 {
     string filePath = "";
 
-
+    private readonly string encryptCode = "24832ur9fhe1f9uh9u39bvu9ubvr9bv";
 
     public SaveFileHandler(string path) 
     {
@@ -35,8 +35,8 @@ public class SaveFileHandler
 
                 loadedGameData = JsonUtility.FromJson<GameData>(dataPending);
 
-                
-                
+                dataPending = EncryptDecrypt(dataPending);
+
 
                 fs.Close();
                 sr.Close();
@@ -68,7 +68,7 @@ public class SaveFileHandler
 
             string saveData = JsonUtility.ToJson(gameData, true);
 
-
+            saveData = EncryptDecrypt(saveData);
             
 
             FileStream sr = new FileStream(filePath, FileMode.Create);
@@ -87,5 +87,15 @@ public class SaveFileHandler
         }
 
 
+    }
+    private string EncryptDecrypt(string saveData) 
+    {
+        string data = "";
+        for (int i = 0; i < data.Length; i++) 
+        {
+            data += (char)(saveData[i] ^ encryptCode[i%encryptCode.Length]);
+        }
+
+        return data;
     }
 }
