@@ -17,6 +17,8 @@ public class BasicEnemy : EnemyBehaviour
     {
         base.Knockback(x, y);
 
+        
+
 
     }
     public override void Dead()
